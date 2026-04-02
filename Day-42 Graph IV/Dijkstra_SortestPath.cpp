@@ -68,7 +68,7 @@ main()
     graph[4].push_back(Edge(3, 2));
     graph[4].push_back(Edge(2, 5));
 
-    sortPath(0,graph,V);
+    sortPath(2,graph,V);
 
     return 0;
 }
