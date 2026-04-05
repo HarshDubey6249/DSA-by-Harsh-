@@ -25,7 +25,7 @@ public:
             return x;
         }
 
-        find(par[x]);
+      return par[x]=  find(par[x]);  //path comarison
     }
 void unionByRank(int a,int b){
         int parA=find(a);
@@ -39,6 +39,13 @@ void unionByRank(int a,int b){
             par[parB]=parA;
         }else{
             par[parA]=parB;
+        }
+    }
+
+    void info(){
+        for(int i=0;i<n;i++){
+
+            cout<<i<<" =par= "<<par[i]<<"-> rank="<<rank[i]<<endl;
         }
     }
 };
@@ -57,6 +64,6 @@ int main()
     cout << dj.find(2) << endl;
 
     dj.unionByRank(0, 4);
-
+     dj.info();
     return 0;
 }
