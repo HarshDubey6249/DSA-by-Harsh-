@@ -2,62 +2,62 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-class DisjointSet
-{
+// class DisjointSet
+// {
 
-public:
-    int n; // total number of
-    vector<int> par;
-    vector<int> rank;
+// public:
+//     int n; // total number of
+//     vector<int> par;
+//     vector<int> rank;
 
-    DisjointSet(int n)
-    {
-        this->n = n;
-        for (int i = 0; i < n; i++)
-        {
-            par.push_back(i);
-            rank.push_back(0);
-        }
-    }
-    int find(int x)
-    {
-        if (par[x] == x)
-        {
-            return x;
-        }
+//     DisjointSet(int n)
+//     {
+//         this->n = n;
+//         for (int i = 0; i < n; i++)
+//         {
+//             par.push_back(i);
+//             rank.push_back(0);
+//         }
+//     }
+//     int find(int x)
+//     {
+//         if (par[x] == x)
+//         {
+//             return x;
+//         }
 
-        return par[x] = find(par[x]); // path comarison
-    }
-    void unionByRank(int a, int b)
-    {
-        int parA = find(a);
-        int parB = find(b);
+//         return par[x] = find(par[x]); // path comarison
+//     }
+//     void unionByRank(int a, int b)
+//     {
+//         int parA = find(a);
+//         int parB = find(b);
 
-        if (rank[parA] == rank[parB])
-        {
+//         if (rank[parA] == rank[parB])
+//         {
 
-            par[parB] = parA;
-            rank[parA]++;
-        }
-        else if (rank[parA] > rank[parB])
-        {
-            par[parB] = parA;
-        }
-        else
-        {
-            par[parA] = parB;
-        }
-    }
+//             par[parB] = parA;
+//             rank[parA]++;
+//         }
+//         else if (rank[parA] > rank[parB])
+//         {
+//             par[parB] = parA;
+//         }
+//         else
+//         {
+//             par[parA] = parB;
+//         }
+//     }
 
-    void info()
-    {
-        for (int i = 0; i < n; i++)
-        {
+//     void info()
+//     {
+//         for (int i = 0; i < n; i++)
+//         {
 
-            cout << i << " =par= " << par[i] << "-> rank=" << rank[i] << endl;
-        }
-    }
-};
+//             cout << i << " =par= " << par[i] << "-> rank=" << rank[i] << endl;
+//         }
+//     }
+// };
 // 𝗞𝗿𝘂𝘀𝗸𝗮𝗹 𝗔𝗹𝗴𝗼𝗿𝗶𝘁𝗵𝗲𝗺►
 class Edge
 {
