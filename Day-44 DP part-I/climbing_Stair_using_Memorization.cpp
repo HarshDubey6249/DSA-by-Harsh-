@@ -13,7 +13,7 @@ int countWaysUsingRecursion(int n,vector<int>&vec){
     }
 
    vec[n]= countWaysUsingRecursion(n-1,vec)+countWaysUsingRecursion(n-2,vec);
-   return vec[n];
+ 
 }
 
 int main(){

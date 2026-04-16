@@ -1,0 +1,36 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
+int  lcm(string str1,string str2,vector<vector<int>>dp){
+
+    if(str1.size()==0 || str2.size()==0){
+        return 0;
+    }
+    int n=str1.size();
+    int m=str2.size();
+
+    if(dp[n][m]!=-1){
+        return dp[n][m];
+    }
+
+    if(str1[n-1]==str2[m-1]){
+        dp[n][m]= 1+lcm(str1.substr(0,n-1),str2.substr(0,m-1),dp); 
+    }else{
+        int ans1=lcm(str1.substr(0,n-1),str2,dp);
+        int ans2=lcm(str1,str2.substr(0,m-1),dp);
+         
+        dp[n][m]= max(ans1,ans2,dp);
+    }
+  return dp[n][m];
+}
+
+int main(){
+
+    string str1="abcdge";
+    string str2="abedg";
+    vector<vector<int>>dp(str1.size()+1,vector<int>(str2.size()+1,-1));
+    cout<<lcm(str1,str2,dp);
+
+}
